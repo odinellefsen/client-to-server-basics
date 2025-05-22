@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stage 1: Raw HTTP Fundamentals</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Stage 1: Raw HTTP Fundamentals</h1>
+    
+    <div class="tabs">
+      <button class="tab active" data-tab="xhr">XMLHttpRequest</button>
+      <button class="tab" data-tab="fetch">Fetch API</button>
+    </div>
+    
+    <div class="content-wrapper">
+      <div class="tab-content active" id="xhr-content">
+        <h2>XMLHttpRequest Example</h2>
+        
+        <div class="controls">
+          <h3>GET Todos</h3>
+          <div class="buttons">
+            <button id="xhr-get-todos">Get All Todos</button>
+            <button id="xhr-get-todo-by-id">Get Todo by ID</button>
+            <input type="number" id="xhr-todo-id" placeholder="Todo ID" min="1" value="1">
+          </div>
+          
+          <h3>Create Todo</h3>
+          <div class="form">
+            <input type="text" id="xhr-todo-title" placeholder="Todo title">
+            <select id="xhr-todo-user">
+              <option value="">Select a user</option>
+            </select>
+            <button id="xhr-create-todo">Create Todo</button>
+          </div>
+          
+          <h3>Update Todo</h3>
+          <div class="form">
+            <input type="number" id="xhr-update-todo-id" placeholder="Todo ID" min="1" value="1">
+            <input type="text" id="xhr-update-todo-title" placeholder="New title">
+            <label>
+              <input type="checkbox" id="xhr-update-todo-completed">
+              Completed
+            </label>
+            <button id="xhr-update-todo">Update Todo</button>
+          </div>
+          
+          <h3>Delete Todo</h3>
+          <div class="form">
+            <input type="number" id="xhr-delete-todo-id" placeholder="Todo ID" min="1" value="1">
+            <button id="xhr-delete-todo">Delete Todo</button>
+          </div>
+          
+          <h3>Request with Timeout</h3>
+          <div class="buttons">
+            <button id="xhr-timeout">Request with 1s Timeout</button>
+          </div>
+          
+          <h3>Request with Abort</h3>
+          <div class="buttons">
+            <button id="xhr-start-request">Start Long Request</button>
+            <button id="xhr-abort-request">Abort Request</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tab-content" id="fetch-content">
+        <h2>Fetch API Example</h2>
+        
+        <div class="controls">
+          <h3>GET Todos</h3>
+          <div class="buttons">
+            <button id="fetch-get-todos">Get All Todos</button>
+            <button id="fetch-get-todo-by-id">Get Todo by ID</button>
+            <input type="number" id="fetch-todo-id" placeholder="Todo ID" min="1" value="1">
+          </div>
+          
+          <h3>Create Todo</h3>
+          <div class="form">
+            <input type="text" id="fetch-todo-title" placeholder="Todo title">
+            <select id="fetch-todo-user">
+              <option value="">Select a user</option>
+            </select>
+            <button id="fetch-create-todo">Create Todo</button>
+          </div>
+          
+          <h3>Update Todo</h3>
+          <div class="form">
+            <input type="number" id="fetch-update-todo-id" placeholder="Todo ID" min="1" value="1">
+            <input type="text" id="fetch-update-todo-title" placeholder="New title">
+            <label>
+              <input type="checkbox" id="fetch-update-todo-completed">
+              Completed
+            </label>
+            <button id="fetch-update-todo">Update Todo</button>
+          </div>
+          
+          <h3>Delete Todo</h3>
+          <div class="form">
+            <input type="number" id="fetch-delete-todo-id" placeholder="Todo ID" min="1" value="1">
+            <button id="fetch-delete-todo">Delete Todo</button>
+          </div>
+          
+          <h3>Request with Timeout</h3>
+          <div class="buttons">
+            <button id="fetch-timeout">Request with 1s Timeout</button>
+          </div>
+          
+          <h3>Request with Abort</h3>
+          <div class="buttons">
+            <button id="fetch-start-request">Start Long Request</button>
+            <button id="fetch-abort-request">Abort Request</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="output-container">
+        <div class="output-header">
+          <h3>Response</h3>
+          <button id="clear-output">Clear</button>
+        </div>
+        <pre id="output"></pre>
+      </div>
+    </div>
+  </div>
+  
+  <script type="module" src="index.ts"></script>
+</body>
+</html> 

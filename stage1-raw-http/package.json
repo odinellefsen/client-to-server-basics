@@ -1,0 +1,25 @@
+{
+  "name": "stage1-raw-http",
+  "version": "1.0.0",
+  "description": "Raw HTTP Fundamentals with XMLHttpRequest and fetch API",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "http",
+    "xmlhttprequest",
+    "fetch",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.8.9",
+    "parcel": "^2.10.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
