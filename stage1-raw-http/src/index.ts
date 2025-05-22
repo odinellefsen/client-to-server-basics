@@ -1,8 +1,6 @@
-import "./xhr";
 import "./fetch";
-
-// Types
-import type { Todo, User } from "./types";
+import type { User } from "./types";
+import "./xhr";
 
 // API Base URL
 export const API_URL = "http://localhost:3001/api";
@@ -81,7 +79,6 @@ export async function loadUsers(): Promise<void> {
 				fetchOption.textContent = user.name;
 				fetchSelect.appendChild(fetchOption);
 			}
-			)
 		}
 	} catch (error) {
 		console.error("Error loading users:", error);
@@ -94,19 +91,21 @@ export async function loadUsers(): Promise<void> {
 
 // Tab switching functionality
 const tabs = document.querySelectorAll(".tab");
-tabs.forEach((tab) => {
+for (const tab of tabs) {
 	tab.addEventListener("click", () => {
 		// Remove active class from all tabs
-		tabs.forEach((t) => t.classList.remove("active"));
+		for (const t of tabs) {
+			t.classList.remove("active");
+		}
 
 		// Add active class to clicked tab
 		tab.classList.add("active");
 
 		// Hide all tab content
 		const tabContents = document.querySelectorAll(".tab-content");
-		tabContents.forEach((content) => {
+		for (const content of tabContents) {
 			content.classList.remove("active");
-		});
+		}
 
 		// Show the selected tab content
 		const tabName = (tab as HTMLElement).dataset.tab;
@@ -115,7 +114,7 @@ tabs.forEach((tab) => {
 			activeContent?.classList.add("active");
 		}
 	});
-});
+}
 
 // Clear output button
 $("#clear-output").addEventListener("click", () => {
